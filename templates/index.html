@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Campus Events</title>
+<link rel="stylesheet" href="/static/style.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<h1>Campus Events</h1>
+
+{% for event in events %}
+
+<div class="event">
+
+<h2>{{event.event_name}}</h2>
+
+<p>{{event.event_description}}</p>
+
+<p>Date: {{event.event_date}}</p>
+
+<a href="/register/{{event.id}}">
+<button>Register</button>
+</a>
+
+</div>
+
+{% endfor %}
+
+</body>
+</html>

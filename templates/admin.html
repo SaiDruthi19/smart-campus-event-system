@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Admin Dashboard</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<h1>Admin Dashboard</h1>
+
+<h2>Add Event</h2>
+
+<form action="/add_event" method="POST">
+
+<input type="text" name="name" placeholder="Event Name" required><br><br>
+
+<input type="date" name="date" required><br><br>
+
+<input type="text" name="description" placeholder="Description" required><br><br>
+
+<button type="submit">Add Event</button>
+
+</form>
+
+<h2>Events</h2>
+
+{% for event in events %}
+
+<p>
+
+<strong>{{event.event_name}}</strong> - {{event.event_date}}
+
+<br><br>
+
+<a href="/participants/{{event.id}}">View Participants</a>
+
+&nbsp;&nbsp;
+
+<a href="/delete_event/{{event.id}}">Delete Event</a>
+
+</p>
+
+{% endfor %}
+
+<br><br>
+
+<a href="/analytics">View Analytics</a>
+
+</body>
+
+</html>

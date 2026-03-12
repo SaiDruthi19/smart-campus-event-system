@@ -1,0 +1,21 @@
+<h1>Participants</h1>
+
+<table border="1">
+
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Branch</th>
+</tr>
+
+{% for p in data %}
+
+<tr>
+<td>{{p.name}}</td>
+<td>{{p.email}}</td>
+<td>{{p.branch}}</td>
+</tr>
+
+{% endfor %}
+
+</table>

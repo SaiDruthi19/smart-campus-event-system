@@ -1,0 +1,19 @@
+<h1>Event Analytics</h1>
+
+<table border="1">
+
+<tr>
+<th>Event</th>
+<th>Participants</th>
+</tr>
+
+{% for d in data %}
+
+<tr>
+<td>{{d.event_name}}</td>
+<td>{{d.total}}</td>
+</tr>
+
+{% endfor %}
+
+</table>
